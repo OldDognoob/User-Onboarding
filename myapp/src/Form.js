@@ -9,10 +9,6 @@ import * as Yup from 'yup';
 function NewUserForm(){
     //console.log(props);
 
-    const newUserForm ={
-
-    }
-
     return (
         <div className="NewUserForm">
             <Form>
@@ -67,4 +63,21 @@ function NewUserForm(){
     )
 }
 
-export default Form
+const NewUserFormWithFormik = withFormik({
+    mapPropsToValues() {
+        return {
+            name: "",
+            email:"",
+            password:"",
+            terms_of_services:""
+        };
+    },
+
+    validationSchema: Yup.object().shape({
+        name: Yup.string().required("Please enter a name"),
+        email: Yup.string().required("Invalid email"),
+        password: Yup.string().required("Please enter a minimum password length 8 characters"),
+        termsOfServices: Yup.boolean(),
+    }),
+}),
+
