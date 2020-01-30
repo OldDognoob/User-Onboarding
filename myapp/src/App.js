@@ -1,25 +1,36 @@
 import React from 'react';
 
-import './App.css';
-import FormikForm from './Form';
-import Axios from 'axios';
+import Form from './component/Form';
 
 function App() {
-  const submitForm = () => {
-    console.log()
-
-    axios.post('')
-    .then((response) => {
-      console.log(response)
-    })
-  }
   return (
-    <div className="App">
-      <FormikForm/>
-      <FormkForm submit ={submitForm}>
-      </FormkForm>
-    </div>
+  <div className="App">
+    <Form/>
+  </div>
   );
 }
-
 export default App;
+
+// import './App.css';
+// import FormikForm from './Form';
+// import axios from 'axios';
+
+// function App() {
+//   const submitForm = () => {
+//     console.log()
+
+//     axios.post('')
+//     .then((response) => {
+//       console.log(response)
+//     })
+//   }
+//   return (
+//     <div className="App">
+//       <FormikForm/>
+//       <FormikForm submit ={submitForm}>
+//       </FormikForm>
+//     </div>
+//   );
+// }
+
+// export default App;

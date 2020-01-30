@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from React;
-import {withFormik, Form, Field, ErrorMessage} from 'formik';
+import {Formik, Form, Field, ErrorMessage} from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
 
@@ -63,7 +63,7 @@ function NewUserForm(){
     )
 }
 
-const NewUserFormWithFormik = withFormik({
+const NewUserFormWithFormik = Formik({
     mapPropsToValues() {
         return {
             name: "",
